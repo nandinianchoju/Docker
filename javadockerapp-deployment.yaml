@@ -1,0 +1,18 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+name: javadockerapp-deployment 
+labels:  
+app: javadockerapp  
+spec:  
+replicas: 1 
+selector:  
+matchLabels:  
+app: javadockerapp 
+template: 
+metadata:  
+labels: 
+app: javadockerapp 
+spec: containers: - name: javadockerapp-container 
+image: javadockerapp:latest 
+ports:  - containerPort: 8080
